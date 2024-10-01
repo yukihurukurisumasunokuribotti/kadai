@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c35wuxcx6u0vh"]
+
+[ext_resource type="Texture2D" uid="uid://b7yry6kvnyait" path="res://photo/キャラクター（仮）.png" id="1_cka2d"]
+[ext_resource type="Script" path="res://script/meido.gd" id="1_jbrk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnujk"]
+size = Vector2(14.1421, 14.1421)
+
+[node name="Meido" type="Area2D"]
+script = ExtResource("1_jbrk5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_wnujk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 50)
+texture = ExtResource("1_cka2d")
+
+[node name="hantei" type="Sprite2D" parent="."]
