@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7yry6kvnyait"
-path="res://.godot/imported/キャラクター（仮）.png-3ffdef7778717d5b8b852ba3ff452cff.ctex"
+uid="uid://b6cndhf718jg8"
+path="res://.godot/imported/操作キャラ23_20241022121651-removebg-preview.png-f5e818c9d1ef6157c77331fb353f6cc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/キャラクター（仮）.png"
-dest_files=["res://.godot/imported/キャラクター（仮）.png-3ffdef7778717d5b8b852ba3ff452cff.ctex"]
+source_file="res://script/photo/操作キャラ23_20241022121651-removebg-preview.png"
+dest_files=["res://.godot/imported/操作キャラ23_20241022121651-removebg-preview.png-f5e818c9d1ef6157c77331fb353f6cc1.ctex"]
 
 [params]
 

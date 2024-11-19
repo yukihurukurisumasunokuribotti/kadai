@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="kadai"
-run/main_scene="res://tscn/root.tscn"
+run/main_scene="res://script/tscn/root.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://photo/icon.svg"
+
+[display]
+
+window/size/viewport_width=700
+window/size/viewport_height=950
 
 [input]
 

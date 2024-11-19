@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfpp2hpfnjcs7"]
+
+[ext_resource type="Texture2D" uid="uid://bikexwtl8mwgb" path="res://script/photo/無題24_20241029120016.PNG" id="1_d0dha"]
+[ext_resource type="Script" path="res://script/photo/stage/stage1/base.gd" id="2_0bg4v"]
+
+[node name="Base" type="Sprite2D"]
+position = Vector2(80, -1550)
+texture = ExtResource("1_d0dha")
+script = ExtResource("2_0bg4v")

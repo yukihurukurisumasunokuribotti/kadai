@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4iaalao6ljh0"
-path="res://.godot/imported/bullet0.jpg-ad931d9288851c33fa519ca30a653352.ctex"
+uid="uid://cs1ytre4r7dlc"
+path="res://.godot/imported/無題23_20241022121651.PNG-0d6588196e559d26f513a69cfb91a728.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://photo/bullet0.jpg"
-dest_files=["res://.godot/imported/bullet0.jpg-ad931d9288851c33fa519ca30a653352.ctex"]
+source_file="res://script/無題23_20241022121651.PNG"
+dest_files=["res://.godot/imported/無題23_20241022121651.PNG-0d6588196e559d26f513a69cfb91a728.ctex"]
 
 [params]
 

@@ -1,10 +1,11 @@
 extends Node2D
 
-func _ready() -> void:
-	pass
+var ziki = preload("res://tscn/ziki.tscn")
+
+func _ready():
+	var z = ziki.instantiate()
+	add_child(z)
 
 func _process(delta: float) -> void:
 	pass
 	
-func _input(event):
-	print(event.position.x)

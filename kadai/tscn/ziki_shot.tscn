@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf2q5ggktmdh4"]
+[gd_scene load_steps=5 format=3 uid="uid://bf2q5ggktmdh4"]
 
 [ext_resource type="Script" path="res://script/ziki_shot.gd" id="1_06fdd"]
-[ext_resource type="Texture2D" uid="uid://c6egc5g6ldvs7" path="res://photo/icon.svg" id="1_o5urc"]
+[ext_resource type="Texture2D" uid="uid://d2g6wlsari31l" path="res://script/photo/無題13_20241029110605.PNG" id="2_eq053"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sie6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sosfe"]
 
 [node name="ZikiShot" type="Area2D"]
 script = ExtResource("1_06fdd")
@@ -12,5 +14,11 @@ script = ExtResource("1_06fdd")
 shape = SubResource("RectangleShape2D_5sie6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 0.2)
-texture = ExtResource("1_o5urc")
+visible = false
+position = Vector2(70, 48.5)
+scale = Vector2(0.824401, 0.844355)
+texture = SubResource("CompressedTexture2D_sosfe")
+
+[node name="無題1320241029110605" type="Sprite2D" parent="."]
+position = Vector2(3, -1)
+texture = ExtResource("2_eq053")

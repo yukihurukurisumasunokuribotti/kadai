@@ -11,6 +11,9 @@ const type = "ziki"
 #typeを定数として定義しました。これはこの判定が何の判定であるかを表します。
 #これがあれば、当たった相手の種類で動作を制御することができます。
 
+func breaked():
+	queue_free()
+
 func _process(delta: float) -> void:
 	var speed = 0
 	var x = 0
@@ -105,3 +108,10 @@ func _process(delta: float) -> void:
 		s.angle = deg_to_rad(-90)
 		get_tree().root.add_child(s)
 		
+	print(global_position.y)
+
+#敵の弾に当たった時にbreaked関数を呼び出して被弾したときの処理をしてもらいます。
+#いじりたいときには渡邉に言ってね。
+func _on_area_entered(area:Area2D):
+	if area.type == "bullet":
+		breaked()
