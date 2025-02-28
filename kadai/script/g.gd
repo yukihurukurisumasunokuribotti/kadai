@@ -1,5 +1,5 @@
 extends Node
 
 var point = 0
-var zpx
-var zpy 
+var zpx = 350
+var zpy = 700
