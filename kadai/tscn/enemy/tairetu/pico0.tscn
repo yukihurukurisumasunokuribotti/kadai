@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dffv4liexvdgh"]
+[gd_scene load_steps=2 format=3 uid="uid://dffv4liexvdgh"]
+
+[ext_resource type="Script" path="res://script/enemy/tairetu/pico_0.gd" id="1_ub5o4"]
 
 [node name="Pico0" type="Node2D"]
+script = ExtResource("1_ub5o4")

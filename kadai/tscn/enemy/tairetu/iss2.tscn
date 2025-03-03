@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq7dpf3vgi5uk"]
+
+[ext_resource type="Script" path="res://script/enemy/tairetu/iss_2.gd" id="1_tqw1o"]
+[ext_resource type="PackedScene" uid="uid://cg52a882rrf8n" path="res://tscn/enemy/middle/iss.tscn" id="2_fk8e2"]
+
+[node name="Iss2" type="Node2D"]
+script = ExtResource("1_tqw1o")
+
+[node name="Area2D" parent="." instance=ExtResource("2_fk8e2")]
+position = Vector2(500, 0)

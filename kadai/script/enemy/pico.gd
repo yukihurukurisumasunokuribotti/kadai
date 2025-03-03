@@ -1,9 +1,18 @@
 extends Area2D
 
+var hp = 5
+const type = "enemy"
+var movetype = 0
 var count = 0
-var type = 0
 
-var bullet0 = preload("res://tscn/bullet/bullet0.tscn")
+var moveangle = 0
+var movespeed = 0
+var moveframe = 0
+
+var bullet0 = preload("res://tscn/bullet/bullet.tscn")
+
+func hit(damage):
+	hp = hp - 1
 
 func cshot(x, y, angle, speed):
 	var root = get_tree().root
@@ -14,11 +23,10 @@ func cshot(x, y, angle, speed):
 	bullet.speed = speed
 	root.add_child(bullet)
 
-
-func pico0(count):
-	if count < 45:
-		position.x = position.x + 10
-		position.y = position.y + 3
+func pico0():
+	if count < moveframe:
+		position.x = position.x + movespeed * cos(deg_to_rad(moveangle))
+		position.y = position.y + movespeed * sin(deg_to_rad(moveangle))
 		
 	elif count < 225:
 		if count % 20 == 0:
@@ -27,17 +35,28 @@ func pico0(count):
 			cshot(global_position.x, global_position.y, baseangle + 30, 15)
 			cshot(global_position.x, global_position.y, baseangle - 30, 15)
 	else:
-		position.x = position.x - 10
-		position.y = position.y - 3
+		position.x = position.x - movespeed * cos(deg_to_rad(moveangle))
+		position.y = position.y - movespeed * sin(deg_to_rad(moveangle))
 
-func pico1(count):
-	pass
-
-func _process(delta):
-	match type:
-		0:
-			pico0(count)
-		1:
-			pico1(count)
+func pico1():
+	var toziki = atan2(g.zpy - global_position.y, g.zpx - global_position.x)
+	position.x = position.x + cos(toziki)
+	position.y = position.y + sin(toziki)
 	
+	if count % 45 == 0:
+		cshot(position.x, position.y, rad_to_deg(toziki), 7)
+		
+func _process(delta):
+	match movetype:
+		0:
+			pico0()
+		1:
+			pico1()	
+	
+	if position.y < -50 or position.x < -25 or position.y > 1050 or position.x > 725:
+		queue_free()
+
+	if hp < 0:
+		queue_free()
+		
 	count = count + 1

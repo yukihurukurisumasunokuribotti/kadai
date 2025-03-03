@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg52a882rrf8n"]
+
+[ext_resource type="Script" path="res://script/enemy/middle/iss.gd" id="1_b8t7y"]
+[ext_resource type="Texture2D" uid="uid://bmq04wfexb15x" path="res://photo/iss.png" id="2_yvxne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yudkc"]
+size = Vector2(400, 300)
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_b8t7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yudkc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yvxne")

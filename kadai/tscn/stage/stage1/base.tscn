@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfpp2hpfnjcs7"]
+[gd_scene load_steps=4 format=3 uid="uid://bfpp2hpfnjcs7"]
 
-[ext_resource type="Texture2D" uid="uid://bikexwtl8mwgb" path="res://script/photo/無題24_20241029120016.PNG" id="1_d0dha"]
-[ext_resource type="Script" path="res://script/photo/stage/stage1/base.gd" id="2_0bg4v"]
+[ext_resource type="Texture2D" uid="uid://bikexwtl8mwgb" path="res://photo/無題24_20241029120016.PNG" id="1_d0dha"]
+[ext_resource type="Script" path="res://script/stage/stage1/base.gd" id="2_0bg4v"]
+[ext_resource type="PackedScene" uid="uid://cry2lqr1q2rdr" path="res://tscn/enemy/boss.tscn" id="3_43vot"]
 
 [node name="Base" type="Sprite2D"]
-position = Vector2(80, -1550)
+position = Vector2(80, -1500)
 texture = ExtResource("1_d0dha")
 script = ExtResource("2_0bg4v")
+
+[node name="joudo" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(970, -2500)
+
+[node name="boss" parent="joudo" instance=ExtResource("3_43vot")]
+position = Vector2(0, 0)

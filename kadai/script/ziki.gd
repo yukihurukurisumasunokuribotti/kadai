@@ -89,7 +89,8 @@ func _process(delta: float) -> void:
 		#座標の変数がpositionではなくglobal_positionになっているのは自分から見た相対的な座標ではなく、絶対的な座標で扱うためです。
 		s.angle = deg_to_rad(-45)
 		#angleを設定しました。これでショットがどの向きに放たれるか決めています。
-		#deg_to_radは度数法で表された角度をラジアンに変換する関数です。
+		#deg_to_radは度数法で表された角度をラジアンに変換する関数です
+		s.syurui = 0
 		get_tree().root.add_child(s)
 		#色々設定したインスタンスをついに動作させる時が来ました！
 		#get_tree().rootはルートノード(一番親分のノード)を表します。そしてadd_childでルートノードの子分に加えるといった寸法です。
@@ -99,19 +100,37 @@ func _process(delta: float) -> void:
 		s = shot.instantiate()
 		s.global_position.x = global_position.x - 65
 		s.global_position.y = global_position.y - 65
+		s.syurui = 0
 		s.angle = deg_to_rad(-135)
 		get_tree().root.add_child(s)
 
 		s = shot.instantiate()
 		s.global_position.x = global_position.x
 		s.global_position.y = global_position.y - 65
+		s.syurui = 0
 		s.angle = deg_to_rad(-90)
 		get_tree().root.add_child(s)
+
+		s = shot.instantiate()
+		s.global_position.x = global_position.x - 127
+		s.global_position.y = global_position.y + 73
+		s.syurui = 1
+		s.angle = deg_to_rad(-90)
+		get_tree().root.add_child(s)
+
+		s = shot.instantiate()
+		s.global_position.x = global_position.x + 127
+		s.global_position.y = global_position.y + 73
+		s.syurui = 1
+		s.angle = deg_to_rad(-90)
+		get_tree().root.add_child(s)
+
+
 		
 	print(global_position.y)
 
 #敵の弾に当たった時にbreaked関数を呼び出して被弾したときの処理をしてもらいます。
 #いじりたいときには渡邉に言ってね。
-func _on_area_entered(area:Area2D):
-	if area.type == "bullet":
+func _on_area_entered(area:Area2D):   
+	if area.type == "bullet": 
 		breaked()

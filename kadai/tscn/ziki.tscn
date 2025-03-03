@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq46gjb1anpva"]
 
 [ext_resource type="Script" path="res://script/ziki.gd" id="1_dxtrl"]
-[ext_resource type="Texture2D" uid="uid://b6cndhf718jg8" path="res://script/photo/操作キャラ23_20241022121651-removebg-preview.png" id="2_j8f7e"]
+[ext_resource type="Texture2D" uid="uid://b6cndhf718jg8" path="res://photo/操作キャラ23_20241022121651-removebg-preview.png" id="2_j8f7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ht3nu"]
 size = Vector2(56, 36)
@@ -13,6 +13,7 @@ script = ExtResource("1_dxtrl")
 shape = SubResource("RectangleShape2D_ht3nu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_j8f7e")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

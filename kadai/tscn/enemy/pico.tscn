@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d100lu1ro5xt7"]
 
 [ext_resource type="Script" path="res://script/enemy/pico.gd" id="1_cd7j8"]
-[ext_resource type="Texture2D" uid="uid://vswc247h5byx" path="res://script/photo/Image.png" id="2_p55v7"]
+[ext_resource type="Texture2D" uid="uid://vswc247h5byx" path="res://photo/Image.png" id="2_p55v7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_an65d"]
 

@@ -1,0 +1,332 @@
+[gd_scene load_steps=22 format=3 uid="uid://cry2lqr1q2rdr"]
+
+[ext_resource type="Script" path="res://script/enemy/boss/boss.gd" id="1_eo0kp"]
+[ext_resource type="Texture2D" uid="uid://btj5khiyhd683" path="res://photo/boss/zimen.png" id="2_ri0b1"]
+[ext_resource type="Texture2D" uid="uid://saad5wsws3sq" path="res://photo/boss/middlehoudai.png" id="2_x7evt"]
+[ext_resource type="Texture2D" uid="uid://frh8ms25o4ny" path="res://photo/boss/bigasi.png" id="3_deawx"]
+[ext_resource type="Script" path="res://script/enemy/boss/middlehoudai.gd" id="3_e6kv7"]
+[ext_resource type="Texture2D" uid="uid://crewg6eig5doe" path="res://photo/boss/bighoudai.png" id="4_cxsvn"]
+[ext_resource type="Script" path="res://script/enemy/boss/bighoudai.gd" id="5_6xg7e"]
+[ext_resource type="Texture2D" uid="uid://dbprikiickkr4" path="res://photo/boss/daiza.png" id="6_ej7xb"]
+[ext_resource type="Texture2D" uid="uid://cn7pu8onkc1u3" path="res://photo/boss/syuhou.png" id="7_q6cg0"]
+[ext_resource type="Texture2D" uid="uid://cvvesy7iq5v0a" path="res://photo/boss/sankyaku.png" id="8_d10sd"]
+[ext_resource type="Texture2D" uid="uid://dit0codmwqe8x" path="res://photo/boss/masingan.png" id="9_cmv65"]
+[ext_resource type="Script" path="res://script/enemy/boss/syuhou.gd" id="9_ktrb8"]
+[ext_resource type="Texture2D" uid="uid://cbijn0orpqm3n" path="res://photo/boss/smallhoudai.png" id="10_pcnpq"]
+[ext_resource type="Script" path="res://script/enemy/boss/ragaku.gd" id="11_5k1ng"]
+[ext_resource type="Script" path="res://script/enemy/boss/smallhoudai.gd" id="13_2rl33"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbkv7"]
+radius = 79.0063
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to7wn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_him1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nki5x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06hi2"]
+size = Vector2(18, 61)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4faf"]
+
+[node name="boss" type="Node2D"]
+position = Vector2(1050, 0)
+script = ExtResource("1_eo0kp")
+
+[node name="daiti" type="Sprite2D" parent="."]
+texture = ExtResource("2_ri0b1")
+
+[node name="middlehoudai1" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(-500, -150)
+script = ExtResource("3_e6kv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="middlehoudai1"]
+shape = SubResource("CircleShape2D_qbkv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="middlehoudai1"]
+texture = ExtResource("2_x7evt")
+
+[node name="N" type="Node2D" parent="middlehoudai1"]
+position = Vector2(0, -95)
+
+[node name="S" type="Node2D" parent="middlehoudai1"]
+position = Vector2(0, 95)
+
+[node name="E" type="Node2D" parent="middlehoudai1"]
+position = Vector2(95, 0)
+
+[node name="W" type="Node2D" parent="middlehoudai1"]
+position = Vector2(-95, 0)
+
+[node name="bigasi1" type="Sprite2D" parent="."]
+position = Vector2(-650, -600)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_deawx")
+
+[node name="bighoudai1" type="Area2D" parent="bigasi1"]
+script = ExtResource("5_6xg7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bigasi1/bighoudai1"]
+shape = SubResource("RectangleShape2D_to7wn")
+
+[node name="Sprite2D" type="Sprite2D" parent="bigasi1/bighoudai1"]
+texture = ExtResource("4_cxsvn")
+
+[node name="left" type="Node2D" parent="bigasi1/bighoudai1"]
+position = Vector2(100, 250)
+
+[node name="right" type="Node2D" parent="bigasi1/bighoudai1"]
+position = Vector2(-100, 250)
+
+[node name="bigasi2" type="Sprite2D" parent="."]
+position = Vector2(650, -600)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_deawx")
+
+[node name="bighoudai2" type="Area2D" parent="bigasi2"]
+script = ExtResource("5_6xg7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bigasi2/bighoudai2"]
+shape = SubResource("RectangleShape2D_him1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="bigasi2/bighoudai2"]
+texture = ExtResource("4_cxsvn")
+
+[node name="left" type="Node2D" parent="bigasi2/bighoudai2"]
+position = Vector2(100, 250)
+
+[node name="right" type="Node2D" parent="bigasi2/bighoudai2"]
+position = Vector2(-100, 250)
+
+[node name="daiza" type="Sprite2D" parent="."]
+position = Vector2(0, -550)
+texture = ExtResource("6_ej7xb")
+
+[node name="syuhou" type="Area2D" parent="daiza"]
+position = Vector2(0, -275)
+script = ExtResource("9_ktrb8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="daiza/syuhou"]
+shape = SubResource("RectangleShape2D_nki5x")
+
+[node name="Sprite2D" type="Sprite2D" parent="daiza/syuhou"]
+position = Vector2(0, 120)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_q6cg0")
+
+[node name="shaka" type="Node2D" parent="daiza/syuhou"]
+position = Vector2(0, 315)
+
+[node name="monju" type="Node2D" parent="daiza/syuhou"]
+position = Vector2(37, 315)
+
+[node name="fugen" type="Node2D" parent="daiza/syuhou"]
+position = Vector2(-37, 315)
+
+[node name="middlehoudai1" type="Area2D" parent="daiza"]
+position = Vector2(-245, -100)
+script = ExtResource("3_e6kv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="daiza/middlehoudai1"]
+shape = SubResource("CircleShape2D_qbkv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="daiza/middlehoudai1"]
+texture = ExtResource("2_x7evt")
+
+[node name="N" type="Node2D" parent="daiza/middlehoudai1"]
+position = Vector2(0, -95)
+
+[node name="S" type="Node2D" parent="daiza/middlehoudai1"]
+position = Vector2(0, 95)
+
+[node name="E" type="Node2D" parent="daiza/middlehoudai1"]
+position = Vector2(95, 0)
+
+[node name="W" type="Node2D" parent="daiza/middlehoudai1"]
+position = Vector2(-95, 0)
+
+[node name="ragaku1" type="Sprite2D" parent="daiza"]
+position = Vector2(-100, 0)
+texture = ExtResource("8_d10sd")
+
+[node name="Area2D" type="Area2D" parent="daiza/ragaku1"]
+script = ExtResource("11_5k1ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="daiza/ragaku1/Area2D"]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_06hi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="daiza/ragaku1/Area2D"]
+texture = ExtResource("9_cmv65")
+
+[node name="ragaku2" type="Sprite2D" parent="daiza"]
+position = Vector2(100, 0)
+texture = ExtResource("8_d10sd")
+
+[node name="Area2D" type="Area2D" parent="daiza/ragaku2"]
+script = ExtResource("11_5k1ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="daiza/ragaku2/Area2D"]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_06hi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="daiza/ragaku2/Area2D"]
+texture = ExtResource("9_cmv65")
+
+[node name="middlehoudai2" type="Area2D" parent="daiza"]
+position = Vector2(245, -100)
+script = ExtResource("3_e6kv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="daiza/middlehoudai2"]
+shape = SubResource("CircleShape2D_qbkv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="daiza/middlehoudai2"]
+texture = ExtResource("2_x7evt")
+
+[node name="N" type="Node2D" parent="daiza/middlehoudai2"]
+position = Vector2(0, -95)
+
+[node name="S" type="Node2D" parent="daiza/middlehoudai2"]
+position = Vector2(0, 95)
+
+[node name="E" type="Node2D" parent="daiza/middlehoudai2"]
+position = Vector2(95, 0)
+
+[node name="W" type="Node2D" parent="daiza/middlehoudai2"]
+position = Vector2(-95, 0)
+
+[node name="middlehoudai2" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(500, 150)
+script = ExtResource("3_e6kv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="middlehoudai2"]
+shape = SubResource("CircleShape2D_qbkv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="middlehoudai2"]
+texture = ExtResource("2_x7evt")
+
+[node name="N" type="Node2D" parent="middlehoudai2"]
+position = Vector2(0, -95)
+
+[node name="S" type="Node2D" parent="middlehoudai2"]
+position = Vector2(0, 95)
+
+[node name="E" type="Node2D" parent="middlehoudai2"]
+position = Vector2(95, 0)
+
+[node name="W" type="Node2D" parent="middlehoudai2"]
+position = Vector2(-95, 0)
+
+[node name="smallhoudai" type="Area2D" parent="."]
+position = Vector2(-844, 259)
+script = ExtResource("13_2rl33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="smallhoudai"]
+shape = SubResource("CircleShape2D_x4faf")
+
+[node name="Sprite2D" type="Sprite2D" parent="smallhoudai"]
+texture = ExtResource("10_pcnpq")
+
+[node name="smallhoudai2" type="Area2D" parent="."]
+position = Vector2(663, 409)
+script = ExtResource("13_2rl33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="smallhoudai2"]
+shape = SubResource("CircleShape2D_x4faf")
+
+[node name="Sprite2D" type="Sprite2D" parent="smallhoudai2"]
+texture = ExtResource("10_pcnpq")
+
+[node name="smallhoudai3" type="Area2D" parent="."]
+position = Vector2(-756, -290)
+script = ExtResource("13_2rl33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="smallhoudai3"]
+shape = SubResource("CircleShape2D_x4faf")
+
+[node name="Sprite2D" type="Sprite2D" parent="smallhoudai3"]
+texture = ExtResource("10_pcnpq")
+
+[node name="smallhoudai4" type="Area2D" parent="."]
+position = Vector2(-137, 114)
+script = ExtResource("13_2rl33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="smallhoudai4"]
+shape = SubResource("CircleShape2D_x4faf")
+
+[node name="Sprite2D" type="Sprite2D" parent="smallhoudai4"]
+texture = ExtResource("10_pcnpq")
+
+[node name="smallhoudai5" type="Area2D" parent="."]
+position = Vector2(227, 286)
+script = ExtResource("13_2rl33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="smallhoudai5"]
+shape = SubResource("CircleShape2D_x4faf")
+
+[node name="Sprite2D" type="Sprite2D" parent="smallhoudai5"]
+texture = ExtResource("10_pcnpq")
+
+[node name="smallhoudai6" type="Area2D" parent="."]
+position = Vector2(731, -5)
+script = ExtResource("13_2rl33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="smallhoudai6"]
+shape = SubResource("CircleShape2D_x4faf")
+
+[node name="Sprite2D" type="Sprite2D" parent="smallhoudai6"]
+texture = ExtResource("10_pcnpq")
+
+[node name="middlehoudai3" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(-140, 322)
+script = ExtResource("3_e6kv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="middlehoudai3"]
+shape = SubResource("CircleShape2D_qbkv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="middlehoudai3"]
+texture = ExtResource("2_x7evt")
+
+[node name="N" type="Node2D" parent="middlehoudai3"]
+position = Vector2(0, -95)
+
+[node name="S" type="Node2D" parent="middlehoudai3"]
+position = Vector2(0, 95)
+
+[node name="E" type="Node2D" parent="middlehoudai3"]
+position = Vector2(95, 0)
+
+[node name="W" type="Node2D" parent="middlehoudai3"]
+position = Vector2(-95, 0)
+
+[node name="ragaku1" type="Sprite2D" parent="."]
+position = Vector2(904, 283)
+texture = ExtResource("8_d10sd")
+
+[node name="Area2D" type="Area2D" parent="ragaku1"]
+script = ExtResource("11_5k1ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ragaku1/Area2D"]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_06hi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="ragaku1/Area2D"]
+texture = ExtResource("9_cmv65")
+
+[node name="ragaku2" type="Sprite2D" parent="."]
+position = Vector2(924, -184)
+texture = ExtResource("8_d10sd")
+
+[node name="Area2D" type="Area2D" parent="ragaku2"]
+script = ExtResource("11_5k1ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ragaku2/Area2D"]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_06hi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="ragaku2/Area2D"]
+texture = ExtResource("9_cmv65")
