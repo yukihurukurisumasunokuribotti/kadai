@@ -12,7 +12,7 @@ const type = "ziki"
 #これがあれば、当たった相手の種類で動作を制御することができます。
 
 func breaked():
-	queue_free()
+	print("hidannsimasita")
 
 func _process(delta: float) -> void:
 	var speed = 0

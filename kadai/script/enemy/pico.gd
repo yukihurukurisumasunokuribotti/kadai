@@ -12,7 +12,7 @@ var moveframe = 0
 var bullet0 = preload("res://tscn/bullet/bullet.tscn")
 
 func hit(damage):
-	hp = hp - 1
+	hp = hp - damage
 
 func cshot(x, y, angle, speed):
 	var root = get_tree().root
